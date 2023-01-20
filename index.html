@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>japanview</title>
+    <link rel="stylesheet" href="css/app.css">
+
+    <!-- Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <div id="top">
+        <div class="nav-container1">
+            <div class="nav-logo">
+                <img src="/JapanView/img/japanview-logo.png" alt="">
+                <a> Study & Experience in JAPAN</a>
+            </div>
+            <div class="search-bar">
+                <input type="Search" placeholder="Search...">
+            </div>
+        </div>
+        <div class="list-menu">
+            <nav aria-label="main navigation">
+                <ul class="menus">
+                    <li><a href="#">NEWS</a></li>
+                    <a><b>|</b></a>
+                    <li>
+                        <button type="button" aria-haspopup="true" aria-expanded="true" aria-controls="dropdown1"> Featured<span class="arrow"></span>
+                        </button>
+                    </li>
+                    <a><b>|</b></a>
+                    <li>
+                        <button type="button" aria-haspopup="true" aria-expanded="true" aria-controls="dropdown1">
+                            Featured<span class="arrow"></span>
+                        </button>
+                        <ul class="dropdown" id="dropdown1">
+                            <li><a href="#">ARTICLES</a></li>
+                            <li><a href="#">COMMUNITY CORNER</a></li>
+                        </ul>
+                    </li>
+                    <a><b>|</b></a>
+                    <li><a href="#">LEARN JAPANESE</a></li>
+                    <a><b>|</b></a>
+                    <li>
+                        <button type="button" aria-haspopup="true" aria-expanded="true" aria-controls="dropdown1">
+                            STUDY<span class="arrow"></span>
+                        </button>
+                        <ul class="dropdown" id="dropdown1">
+                            <li><a href="#">University</a></li>
+                            <li><a href="#">Junior College</a></li>
+                            <li><a href="#">Vocational School</a></li>
+                            <li><a href="#">Japanese Language School</a></li>
+                        </ul>
+                    </li>
+                    <a><b>|</b></a>
+                    <li>
+                        <button type="button" aria-haspopup="true" aria-expanded="true" aria-controls="dropdown1">
+                            EXPERIENCE & LOCATION<span class="arrow"></span>
+                        </button>
+                        <ul class="dropdown" id="dropdown1">
+                            <a href="Experience">Experience </a>
+                            <li><a href="#">Museum</a></li>
+                            <li><a href="#">Art Museum</a></li>
+                            <li><a href="#">Zoo</a></li>
+                            <li><a href="#">Aquarium</a></li>
+                        </ul>
+                    </li>
+        </div>
+    </div>  
+    <section id="slider-2">
+        <div class="container wide">
+            <div class="swiper" id="swiper-2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <figure>
+                            <img src="/JapanView/img/Pokemon.jpg" alt="1" />
+                        </figure>
+                    </div>  <!-- end swiper-slide -->
+                    <div class="swiper-slide">
+                        <figure>
+                            <img src="/JapanView/img/SEN_kanji-of-the-year.jpg" alt="2" />
+                        </figure>
+                    </div>  <!-- end swiper-slide -->
+                    <div class="swiper-slide">
+                        <figure>
+                            <img src="/JapanView/img/Seiyuu.jpg" alt="3" />
+                        </figure>
+                    </div>  <!-- end swiper-slide -->
+                    <div class="swiper-slide">
+                        <figure>
+                            <img src="/JapanView/img/Kegiatan populer.jpg" alt="4" />
+                        </figure>
+                    </div>  <!-- end swiper-slide -->
+                    <div class="swiper-slide">
+                        <figure>
+                            <img src="/JapanView/img/Universitas Internasional.jpg" alt="5" />
+                        </figure>
+                    </div>  <!-- end swiper-slide -->
+                </div> <!-- end swiper-wrapper -->
+
+            </div> <!-- end swiper -->
+        </div> <!-- end container -->
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    
+</body>
+</html>
