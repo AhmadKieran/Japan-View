@@ -3,7 +3,7 @@
 new Swiper("#swiper-2", {
     slidesPerView: 1,
     centeredSlides: true,
-    spaceBetween: 20,
+    spaceBetween: 5,
     pagination: {
         el: ("#swiper-2 .swiper-custom-pagination"),
         clickable: true,
@@ -32,3 +32,5 @@ new Swiper("#swiper-2", {
         }
     }
 });
+
+
