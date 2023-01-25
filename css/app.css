@@ -359,6 +359,7 @@ li:focus-within>button>.arrow {
     height: 50rem;
     object-fit: cover;
     border-radius: 25px;
+    background-position: center;
 
 }
 
@@ -394,6 +395,7 @@ li:focus-within>button>.arrow {
    .jv-list-body a {
     text-decoration: none;
     color: #fff;
+    margin: 0px 15px 0px 15px;
    }
    
    .jv-list-post-type {
