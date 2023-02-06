@@ -3,7 +3,7 @@
 @font-face {
     font-family: 'Gilroy';
     /*a name to be used later*/
-    src: url(../Japan-View/Font/Gilroy-ExtraBold.otf);
+    src: url(../font/Gilroy-ExtraBold.otf);
     /*URL to font*/
     font-weight: bold;
 }
@@ -11,7 +11,7 @@
 @font-face {
     font-family: 'Gilroy';
     /*a name to be used later*/
-    src: url(../Font/Gilroy-Light.otf);
+    src: url(../font/Gilroy-Light.otf);
     /*URL to font*/
     font-weight: lighter;
 }
@@ -20,18 +20,26 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    outline: 1px solid #c80d0d;
+}
+
+#top {
+    position: sticky;
+    /* Fixed/sticky position */
+    z-index: 1000;
+    /* Make sure it does not overlap */
+    top: 0;
+    display: block;
 }
 
 body {
     font-family: 'Gilroy', sans-serif;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 100;
 }
 
 .nav-logo {
     font-family: 'Karla', sans-serif;
-    font-size: 24px;
+    font-size: 26px;
     color: #fff;
     max-height: 76px;
     align-items: center;
@@ -39,7 +47,7 @@ body {
 }
 
 .nav-logo img {
-    max-width: 100px;
+    max-width: 71px;
     height: auto;
     margin: 0px 20px 0px 20px;
 }
@@ -47,9 +55,8 @@ body {
 .nav-container1 {
     margin: 0 auto;
     display: flex;
-    height: 100px;
     justify-content: space-between;
-    background: url(../img/header-bar.png) center no-repeat;
+    background: url(../IMG/header-bar.png) center no-repeat;
     background-size: cover;
     align-items: center;
 }
@@ -62,7 +69,7 @@ input[type=search] {
     border-radius: 5px;
     outline: none;
     border: solid gray 1px;
-    background: url(../Japan-View/img/search-box-icon.png) center no-repeat;
+    background: url(../IMG/search-icon.png) center no-repeat;
     background-size: contain;
     margin-right: 20px;
 }
@@ -91,7 +98,7 @@ input[type=search] {
     position: relative;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     margin: 0 auto;
-    width: 80%;
+    background-color: #fff;
 }
 
 .header-content {
@@ -104,7 +111,7 @@ input[type=search] {
 
 .logo {
     text-decoration: none;
-    font-size: 25px;
+    font-size: 26px;
     color: inherit;
     margin-right: 20px;
 }
@@ -160,10 +167,6 @@ label::before {
 
 input[type="checkbox"]:focus+label::before {
     box-shadow: 0 0 20px black;
-}
-
-ul {
-    background: #f2f2f2;
 }
 
 ul li {
@@ -255,12 +258,13 @@ li:focus-within>button>.arrow {
         background: #fff;
         display: flex;
         transform: initial;
-        width: 55%;
+        width: 70%;
         color: #474747;
         font-family: 'Karla', sans-serif;
         font-size: 16px;
         align-items: center;
         margin: 0 auto;
+        justify-content: space-around;
     }
 
     button {
@@ -277,7 +281,7 @@ li:focus-within>button>.arrow {
 
     ul li {
         position: relative;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     ul li a:hover,
@@ -308,30 +312,6 @@ li:focus-within>button>.arrow {
     }
 }
 
-.jv-list-img span {
-    background: #c80d0d;
-    color: #fff;
-    position: absolute;
-    top: 10px;
-    left: 8PX;
-    padding: 0px 10px 0px 25px;
-    height: 26px;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-}
-
-.jv-list-img span::after {
-    content: '';
-    position: absolute;
-    left: 100%;
-    top: 0;
-    border-left: 5px solid #c80d0d;
-    border-right: 13px solid transparent;
-    border-bottom: 13px solid #c80d0d;
-    border-top: 13px solid #c80d0d;
-}
-
 
 /* Sections-Swiper*/
 #slider-1 {
@@ -344,9 +324,6 @@ li:focus-within>button>.arrow {
     padding: 0 1rem;
 
 }
-/* Responsive */
-@media screen and (max-width: 800px) {
-}
 
 /* Swiper */
 .super-slide {
@@ -356,7 +333,7 @@ li:focus-within>button>.arrow {
 .swiper-slide img {
     display: block;
     width: 100% ;
-    height: 50rem;
+    height: 60rem;
     object-fit: cover;
     border-radius: 25px;
     background-position: center;
@@ -371,115 +348,145 @@ li:focus-within>button>.arrow {
 }
 
 
-@media screen and (max-width: 800px) {
-    .swiper-slide img {
-        height: 30rem;
-    }
+
+.article-content .swiper {
+    width: 100%;
+    height: 100%;
 }
-/* TEXT SLIDER */
-.jv-list-body {
+
+.article-content .swiper-slide {
+    font-size: 18px;
+    width: 88%;
+    height: auto;
+    text-align: center;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+/* TEXT SLIDER  */
+.jv-slide-body {
     display: flex;
     position: absolute;
     bottom: 15px;
     color: #fff;
-    font-size: 34px;
+    font-size: 26px;
     align-items: center;
-    bottom: 50px;
-   }
-   
-   .jv-list-date p,
-   .jv-list-txt p {
+}
+
+.jv-slide-date p,
+.jv-slide-txt p {
     margin: 0px 15px 0px 15px;
-   }
-   
-   .jv-list-body a {
+}
+
+.jv-slide-body a {
     text-decoration: none;
     color: #fff;
-    margin: 0px 15px 0px 15px;
-   }
-   
-   .jv-list-post-type {
+}
+
+.jv-slide-post-type {
     border: solid 1px #fff;
     border-radius: 50px;
     padding: 2px 10px;
     flex-shrink: 0;
-    margin: 0px 15px 0px 15px;
-   }
+    margin: 0px 0px 0px 15px;
+}
+
+.jv-article-item {
+    width: 100%;
+    height: 100%;
+}
 
 /* MAIN CONTENT  */
 .wrapper {
     width: 88%;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
 }
 
 .main-content {
     width: 70%;
 }
 
-/* VIDEO */
+/* VIDEO  */
 .title {
     display: flex;
     border-bottom: solid 4px #cd8d9f;
     justify-content: space-between;
     margin-top: 40px;
     margin-bottom: 20px;
-   }
-   
-   .tittle-kiri {
+}
+
+.title-left {
     display: flex;
-    width: 70%;
+    width: 67%;
     height: 100%;
-   }
-   
-   .title a {
+}
+
+.title-right {
+    display: flex;
+    align-items: end;
+    margin: 5px 0px;
+}
+
+.title a {
     text-decoration: none;
     text-align: center;
     background-image: linear-gradient(#dd6f56, #f0866e);
     color: #fff;
     cursor: pointer;
-    margin: 0 10px;
+    margin: 0px;
     padding: 6px 10px 6px 10px;
-    font-size: 12px;
+    font-size: 16px;
     border-radius: 50px;
-   }
-   
-   .title h1 {
+}
+
+.title h1 {
     color: #fff;
     font-weight: bold;
     text-shadow:
-    -3px -3px 0 #cd8d9f,
-    0 -3px 0 #cd8d9f,
-    3px -3px 0 #cd8d9f,
-    3px 0 0 #cd8d9f,
-    3px 3px 0 #cd8d9f,
-    0 3px 0 #cd8d9f,
-    -3px 3px 0 #cd8d9f,
-    -3px 0 0 #cd8d9f;
-   }
-   
-   .title .desc {
+        -2px -2px 0 #cd8d9f, 0 -2px 0 #cd8d9f, 2px -2px 0 #cd8d9f, 2px 0 0 #cd8d9f, 2px 2px 0 #cd8d9f, 0 2px 0 #cd8d9f, -2px 2px 0 #cd8d9f, -2px 0 0 #cd8d9f;
+    margin: 0px 0px 0px 0px;
+    font-size: 34px;
+}
+
+.title .desc {
     font-weight: bold;
     color: #676767;
     font-size: 24px;
     margin-left: 20px;
     display: flex;
     align-items: end;
-   }
-   
-   .video-content {
+    margin-bottom: 5px;
+}
+
+.video-content {
     display: flex;
     justify-content: space-between;
-   }
-   
-   .video-kiri {
+}
+
+.video-left {
     width: 60%;
-   }
-   
-   .video-kanan {
+}
+
+.video-right {
     width: 39%;
-   }
-   
-   .video-1 {
+}
+
+.video-1 {
     width: 100%;
     height: 213px;
     background-image: url('https://japanview.tv/wp-content/uploads/2022/09/thumb_shibuya.jpg');
@@ -487,9 +494,9 @@ li:focus-within>button>.arrow {
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 10px;
-   }
-   
-   .video-1 a::after {
+}
+
+.video-1 a::after {
     content: '';
     position: absolute;
     margin: 0 auto;
@@ -501,9 +508,9 @@ li:focus-within>button>.arrow {
     width: 37%;
     height: 20%;
     margin: 18px 0px;
-   }
-   
-   .video-2 {
+}
+
+.video-2 {
     width: 100%;
     height: 138px;
     background-image: url('https://japanview.tv/wp-content/uploads/2022/04/thumb_asakusa-1.jpg');
@@ -511,9 +518,9 @@ li:focus-within>button>.arrow {
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 10px;
-   }
-   
-   .video-2 a::after {
+}
+
+.video-2 a::after {
     content: '';
     position: absolute;
     margin: 0 auto;
@@ -525,9 +532,9 @@ li:focus-within>button>.arrow {
     width: 24%;
     height: 10%;
     margin: 25px 0px;
-   }
-   
-   .video-3 {
+}
+
+.video-3 {
     width: 100%;
     height: 138px;
     background-image: url('https://japanview.tv/wp-content/uploads/2022/05/thumb_takeshita_doori.jpg');
@@ -535,9 +542,9 @@ li:focus-within>button>.arrow {
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 10px;
-   }
-   
-   .video-3 a::after {
+}
+
+.video-3 a::after {
     content: '';
     position: absolute;
     margin: 0 auto;
@@ -549,27 +556,27 @@ li:focus-within>button>.arrow {
     width: 24%;
     height: 10%;
     margin: 25px 0px;
-   }
-   
-   .jv-video-date {
+}
+
+.jv-video-date {
     border: none;
-    font-size: 12px;
+    font-size: 16px;
     color: #999;
     font-weight: 500;
     padding: 0;
-   }
-   
-   .jv-video-txt p {
-    font-size: 12px;
-   }
-   
-   .jv-video-txt a {
+}
+
+.jv-video-txt p {
+    font-size: 16px;
+}
+
+.jv-video-txt a {
     text-decoration: none;
-    color: rgb(59, 59, 59);
+    color: #676767;
     font-weight: bold;
-   }
-   
-   .btn-primary {
+}
+
+.btn-primary {
     background: none;
     display: flex;
     align-items: center;
@@ -577,11 +584,11 @@ li:focus-within>button>.arrow {
     width: auto;
     text-align: left;
     color: #fff;
-   
-   }
-   
-   .btn-primary a {
-    font-size: 12px;
+
+}
+
+.btn-primary a {
+    font-size: 16px;
     text-decoration: none;
     background: #f0866e;
     color: #fff;
@@ -590,36 +597,36 @@ li:focus-within>button>.arrow {
     margin-top: 10px;
     margin-left: 10px;
     padding: 5px 24px 5px 24px;
-   }
-   
-   /* NEWS */
-   .list-news {
+}
+
+/* NEWS  */
+.list-news {
     display: flex;
     justify-content: space-between;
-   }
-   
-   .news-kiri {
+}
+
+.news-left {
     width: 50%;
-   }
-   
-   .news-kanan {
+}
+
+.news-right {
     width: 50%;
-   }
-   
-   .jv-desc-item {
+}
+
+.jv-desc-item {
     display: flex;
     border: none;
     margin: 0 0 25px 0px;
-   }
-   
-   .body-news {
+}
+
+.body-news {
     width: 70%;
     margin-left: 10px;
     position: relative;
-   
-   }
-   
-   .news-1 {
+
+}
+
+.news-1 {
     width: 100px;
     height: 100px;
     background-image: url('https://japanview.tv/wp-content/uploads/2022/12/1-1.jpg');
@@ -628,9 +635,9 @@ li:focus-within>button>.arrow {
     background-repeat: no-repeat;
     border-radius: 5px;
     display: block;
-   }
-   
-   .news-2 {
+}
+
+.news-2 {
     width: 100px;
     height: 100px;
     background-image: url('https://japanview.tv/wp-content/uploads/2022/12/sub1-1200x800.jpg');
@@ -639,9 +646,9 @@ li:focus-within>button>.arrow {
     background-repeat: no-repeat;
     border-radius: 5px;
     display: block;
-   }
-   
-   .news-3 {
+}
+
+.news-3 {
     width: 100px;
     height: 100px;
     background-image: url('https://japanview.tv/wp-content/uploads/2022/12/thumb.jpg');
@@ -650,9 +657,9 @@ li:focus-within>button>.arrow {
     background-repeat: no-repeat;
     border-radius: 5px;
     display: block;
-   }
-   
-   .news-4 {
+}
+
+.news-4 {
     width: 100px;
     height: 100px;
     background-image: url('https://japanview.tv/wp-content/uploads/2022/11/upi-01.jpg');
@@ -661,36 +668,35 @@ li:focus-within>button>.arrow {
     background-repeat: no-repeat;
     border-radius: 5px;
     display: block;
-   }
-   
-   .jv-desc-date {
+}
+
+.jv-desc-date {
     border: none;
-    font-size: 12px;
+    font-size: 16px;
     color: #999;
     font-weight: 500;
     padding: 0;
     position: absolute;
     bottom: 0px;
-   }
-   
-   .jv-desc-txt p {
-    font-size: 12px;
-   }
-   
-   .jv-desc-txt a {
+}
+
+.jv-desc-txt p {
+    font-size: 16px;
+}
+
+.jv-desc-txt a {
     text-decoration: none;
-    color: rgb(59, 59, 59);
+    color: #676767;
     font-weight: bold;
-   }
+}
 
-
-   /* ARTICLES */
+/* ARTICLES  */
 
 .jv-article-img-1 {
     background-image: url('https://japanview.tv/wp-content/uploads/2022/12/01-1-1200x800.jpg'), linear-gradient(to bottom, rgba(163, 66, 94, 0) 0%, rgba(141, 82, 99, 0.418) 60%, rgb(172, 93, 114) 100%);
     background-blend-mode: soft-light;
     width: 100%;
-    max-height: 350px;
+    height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -698,13 +704,13 @@ li:focus-within>button>.arrow {
     position: relative;
     display: flex;
     align-items: flex-end;
-   }
-   
-   .jv-article-img-3 {
+}
+
+.jv-article-img-3 {
     background-image: url('https://japanview.tv/wp-content/uploads/2021/09/DIS7833.jpg'), linear-gradient(to bottom, rgba(163, 66, 94, 0) 0%, rgba(141, 82, 99, 0.418) 60%, rgb(172, 93, 114) 100%);
     background-blend-mode: soft-light;
     width: 100%;
-    max-height: 350px;
+    height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -712,13 +718,13 @@ li:focus-within>button>.arrow {
     position: relative;
     display: flex;
     align-items: flex-end;
-   }
-   
-   .jv-article-img-2 {
+}
+
+.jv-article-img-2 {
     background-image: url('https://japanview.tv/wp-content/uploads/2021/08/201804絵葉書.jpg'), linear-gradient(to bottom, rgba(163, 66, 94, 0) 0%, rgba(141, 82, 99, 0.418) 60%, rgb(172, 93, 114) 100%);
     background-blend-mode: soft-light;
     width: 100%;
-    max-height: 350px;
+    height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -726,13 +732,13 @@ li:focus-within>button>.arrow {
     position: relative;
     display: flex;
     align-items: flex-end;
-   }
-   
-   .jv-article-img-4 {
+}
+
+.jv-article-img-4 {
     background-image: url('https://japanview.tv/wp-content/uploads/2021/07/image-01.jpg'), linear-gradient(to bottom, rgba(163, 66, 94, 0) 0%, rgba(141, 82, 99, 0.418) 60%, rgb(172, 93, 114) 100%);
     background-blend-mode: soft-light;
-    width: 100% !important;
-    max-height: 350px;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -740,58 +746,1011 @@ li:focus-within>button>.arrow {
     position: relative;
     display: flex;
     align-items: flex-end;
-   }
-   
-   .jv-article-body {
+}
+
+.jv-article-body {
     color: #fff;
     text-align: start;
     padding: 10px;
     /* position: absolute; */
-   }
-   
-   .img-1 .jv-article-body {
+}
+
+.img-1 .jv-article-body {
     padding-top: 223px;
-   }
-   
-   .jv-article-txt a {
+}
+
+.jv-article-txt a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
     font-size: 28px;
-   }
-   
-   .jv-article-body .excerpt,
-   .jv-article-body .jv-article-date {
-    font-size: 18px;
-   }
-   
-   .jv-article-date p {
-    font-size: 14px;
-   }
-   
-   /* target all bullets */
-   .swiper-pagination-bullet.swiper-pagination-bullet {
+}
+
+.jv-article-body .excerpt,
+.jv-article-body .jv-article-date {
+    font-size: 16px;
+}
+
+.jv-article-date p {
+    font-size: 16px;
+}
+
+/* target all bullets */
+.swiper-pagination-bullet.swiper-pagination-bullet {
     background-color: #f4a9be;
     opacity: 1;
     height: 15px;
     width: 15px;
-   }
-   
-   .swiper-pagination-bullet.swiper-pagination-bullet-active {
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
     background-color: #ae7182;
     opacity: 1;
     height: 15px;
     width: 15px;
-   }
-   
-   .swiper-pagination {
+}
+
+.swiper-pagination {
     position: relative !important;
     bottom: 0px !important;
-   }
-   
-   .swiper-button-prev,
-   .swiper-button-next {
+}
+
+.swiper-button-prev,
+.swiper-button-next {
     color: #fff !important;
     font-weight: bold;
     border: 10px #ae7182 !important;
-   }
+}
+
+/* LEARN JAPANESE */
+.lj-1 {
+    width: 100px;
+    height: 100px;
+    background-image: url('https://japanview.tv/wp-content/uploads/2022/12/thum-binus.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: block;
+}
+
+.lj-2 {
+    width: 100px;
+    height: 100px;
+    background-image: url('https://japanview.tv/wp-content/uploads/2022/12/DSC9388-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: block;
+}
+
+.lj-3 {
+    width: 100px;
+    height: 100px;
+    background-image: url('https://japanview.tv/wp-content/uploads/2022/12/thum-unsada.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: block;
+}
+
+/* EXPERIENCE */
+.title .desc-2 {
+    font-weight: bold;
+    color: #676767;
+    font-size: 18px;
+    text-align: end;
+    display: flex;
+    align-items: end;
+}
+
+.title-2 {
+    display: block;
+}
+
+.title-2-left {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0px auto;
+}
+
+.tab-trigger ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    color: #fff;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: bold;
+}
+
+.tab-trigger ul li label {
+    position: relative;
+    display: block;
+    padding: 8px 15px;
+    cursor: pointer;
+    min-width: 100px;
+    background: #cb8e9f;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+}
+
+.tab-trigger ul li:nth-child(1) label {
+    background: #cb8e9f;
+}
+
+.tab-trigger ul li:nth-child(2) label {
+    background: #ac7282;
+}
+
+.tab-container-wrap {
+    position: relative;
+}
+
+.tab-container-wrap input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin: 0;
+    z-index: -100;
+}
+
+.tab-container-wrap input:checked+.tab-content-box {
+    display: block;
+}
+
+.tab-content-box {
+    display: none;
+    background: #cb8e9f;
+    padding: 10px 10px 1px 10px;
+}
+
+.tab-content-box:nth-of-type(1) {
+    background: #cb8e9f;
+}
+
+.tab-content-box:nth-of-type(2) {
+    background: #ac7282;
+}
+
+.jv-list-tags {
+    display: flex;
+    font-size: 16px;
+    font-weight: 500;
+    flex-wrap: wrap;
+    background-color: transparent;
+}
+
+.jv-list-tags a {
+    padding: 0px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: lighter;
+    color: #676767;
+    margin: 0px 5px;
+    background-color: #fff;
+}
+
+.jv-desc-txt .excerpt {
+    font-size: 16px;
+    font-weight: lighter;
+    color: #676767;
+    margin: 0;
+    padding: 2px 0px 10px;
+}
+
+.experience-1 {
+    width: 100px;
+    height: 100px;
+    background-image: url('https://japanview.tv/wp-content/uploads/2021/08/1階-アトリウム・ミュージアムショップ.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: block;
+}
+
+.experience-2 {
+    width: 100px;
+    height: 100px;
+    background-image: url('https://japanview.tv/wp-content/uploads/2021/08/ステンドグラス体験.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: block;
+}
+
+.experience-3 {
+    width: 100px;
+    height: 100px;
+    background-image: url('https://japanview.tv/wp-content/uploads/2021/08/ジンベエザメのモニュメント_H8A0935.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: block;
+}
+
+.experience-4 {
+    width: 100px;
+    height: 100px;
+    background-image: url('https://japanview.tv/wp-content/uploads/2021/08/CIMG9613.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: block;
+}
+
+.jv-experience-item {
+    display: flex;
+    border: none;
+    margin: 0 0 10px 0px;
+    background: rgba(255, 255, 255, 0.774);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* COMMUNITY CORNER */
+.title-cc {
+    border-bottom: solid 4px #676767;
+}
+
+.title-cc h1 {
+    text-shadow: -2px -2px 0 #676767, 0 -2px 0 #676767, 2px -2px 0 #676767, 2px 0 0 #676767, 2px 2px 0 #676767, 0 2px 0 #676767, -2px 2px 0 #676767, -2px 0 0 #676767;
+}
+
+.cc-1 {
+    width: 200px;
+    height: 100px;
+    background-image: url('https://japanview.tv/wp-content/uploads/2022/12/image-6.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: block;
+}
+
+.cc-2 {
+    width: 200px;
+    height: 100px;
+    background-image: url('https://japanview.tv/wp-content/uploads/2023/01/25136211_m.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: block;
+}
+
+.cc-3 {
+    width: 200px;
+    height: 100px;
+    background-image: url('https://japanview.tv/wp-content/uploads/2023/01/b6965bcfa6186430dcc6.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: block;
+}
+
+.cc-4 {
+    width: 200px;
+    height: 100px;
+    background-image: url('https://japanview.tv/wp-content/uploads/2023/01/5631213068_68ac45647c_c.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: block;
+}
+
+/* SIDE BAR */
+.jv-sidebar {
+    width: 27%;
+}
+
+.jv-sidebar h3 {
+    border-bottom: solid 4px #67b1b6;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* PR BOX */
+.pr-box h3 {
+    background: url(../img/PR-info.png) left center no-repeat;
+    color: #fff;
+    font-weight: bold;
+    text-shadow:
+        -2px -2px 0 #67b1b6, 0 -2px 0 #67b1b6, 2px -2px 0 #67b1b6, 2px 0 0 #67b1b6, 2px 2px 0 #67b1b6, 0 2px 0 #67b1b6, -2px 2px 0 #67b1b6, -2px 0 0 #67b1b6;
+    font-size: 28px;
+    padding: 10px 0 10px 45px;
+    margin: 20px 0 10px;
+}
+
+.pr-banner img {
+    max-width: 100%;
+    height: auto;
+}
+
+.recent-fix h3 {
+    color: #fff;
+    font-weight: bold;
+    text-shadow:
+        -2px -2px 0 #67b1b6, 0 -2px 0 #67b1b6, 2px -2px 0 #67b1b6, 2px 0 0 #67b1b6, 2px 2px 0 #67b1b6, 0 2px 0 #67b1b6, -2px 2px 0 #67b1b6, -2px 0 0 #67b1b6;
+    font-size: 34px;
+}
+
+/* TODAY'S MOST POPULAR */
+.daily-1 {
+    width: 100px;
+    height: 100px;
+    background-image: url('https://japanview.tv/wp-content/uploads/2023/01/25469600_m.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: block;
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.daily-2 {
+    width: 100px;
+    height: 100px;
+    background-image: url('https://japanview.tv/wp-content/uploads/2022/12/01-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: block;
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.daily-3 {
+    width: 100px;
+    height: 100px;
+    background-image: url('https://japanview.tv/wp-content/uploads/2022/12/1-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: block;
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.daily-4 {
+    width: 100px;
+    height: 100px;
+    background-image: url('https://japanview.tv/wp-content/uploads/2022/12/sub1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: block;
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.daily-5 {
+    width: 100px;
+    height: 100px;
+    background-image: url('https://japanview.tv/wp-content/uploads/2022/12/thumb.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: block;
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.jv-list-item {
+    display: flex;
+    border: none;
+    margin: 0 0 25px;
+    position: relative;
+}
+
+.jv-list-item .jv-list-body {
+    flex-direction: column;
+    position: relative;
+    color: #676767;
+}
+
+.jv-list-item .jv-list-body a {
+    color: #676767;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.daily-rank .jv-list-txt p {
+    margin: 0;
+    line-height: 15px
+}
+
+.daily-rank .jv-list-body {
+    bottom: 0px;
+}
+
+.daily-rank .jv-list-item::after {
+    position: absolute;
+    color: #fff;
+    border-radius: 50%;
+    width: 29px;
+    height: 29px;
+    left: -8px;
+    top: -8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.daily-rank .jv-list-item:nth-child(1)::after {
+    content: '1';
+    background: #fc575b;
+}
+
+.daily-rank .jv-list-item:nth-child(2)::after {
+    content: '2';
+    background: #d2b946;
+}
+
+.daily-rank .jv-list-item:nth-child(3)::after {
+    content: '3';
+    background: #7accc8;
+}
+
+.daily-rank .jv-list-item:nth-child(4)::after {
+    content: '4';
+    background: #7b929f;
+}
+
+.daily-rank .jv-list-item:nth-child(5)::after {
+    content: '5';
+    background: #bbbbbb;
+}
+
+/* POPULAR KEYWORDS */
+.popular-keyword a {
+    color: #67b1b6;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: transparent;
+    border: 2px solid #cd8d9f;
+    border-radius: 15px;
+    text-decoration: none;
+    padding: 0px 5px;
+}
+
+/* FOOTER */
+.jv-footer {
+    background-color: #e5fcff;
+    color: #333;
+    font-family: 'Gilroy', sans-serif;
+    font-size: 16px;
+    margin-top: 50px;
+}
+
+.jv-footer-wrapper {
+    width: 1240px;
+    flex-wrap: wrap;
+}
+
+.jv-footer-wrapper {
+    width: 92%;
+    margin: auto;
+    padding: 40px 0;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jv-footer-logo {
+    flex: none;
+}
+
+.jv-footer-logo1 img {
+    display: block;
+    max-width: 120px;
+}
+
+.jv-footer-logo2 {
+    display: block;
+    max-width: 120px;
+}
+
+.jv-footer-menu {
+    flex: none;
+    width: 86%;
+}
+
+.jv-footer-menu .first-link>a {
+    border-bottom: solid 1px #c2ccd9;
+    display: block;
+    padding: 0 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.jv-footer-menu {
+    flex: 0 0 auto;
+}
+
+.jv-footer-menu li {
+    border: none;
+}
+
+.jv-footer-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.jv-footer-copy {
+    background: #67b1b6;
+    max-width: 100%;
+    text-align: left;
+}
+
+.jv-footer-copy span {
+    display: block;
+    max-width: 92%;
+    margin: 0 auto;
+}
+
+.jv-footer-menu li ul {
+    width: 11em;
+    padding: 10px 0 0;
+}
+
+.jv-footer-menu li:not(:first-child) ul {
+    font-family: 'Gilroy', sans-serif;
+}
+
+.jv-footer-menu li:last-child ul {
+    display: block;
+}
+
+.jv-footer-menu li {
+    padding: 0 10px 8px;
+}
+
+.jv-footer-menu li:nth-child(4) ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.jv-footer-menu li:nth-child(4) ul li {
+    flex: 0 0 4em;
+}
+
+.jv-footer-logo2 {
+    max-width: 120px;
+    display: block;
+}
+
+.jv-footer-logo2 img {
+    width: 100%;
+}
+
+.id_ID .jv-footer-menu>ul {
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.id_ID .jv-footer-menu li:last-child ul {
+    width: auto;
+}
+
+.jv-footer-menu li:nth-child(4) ul {
+    width: 14em;
+}
+
+.jv-footer-menu li:nth-child(4) li {
+    width: 7em;
+    flex: none;
+}
+
+.jv-footer-menu .nav-contents>li {
+    padding: 0 0 0 24px;
+}
+
+.jv-footer-menu li:nth-child(4) ul li {
+    flex: none;
+}
+
+.jv-footer-menu li li {
+    border: 0;
+    padding: 8px 0 0;
+}
+
+.jv-footer-menu a {
+    margin: 0;
+    padding: 0;
+}
+
+#menu-item-19221 .sub-menu {
+    display: block;
+}
+
+#menu-item-19224 .sub-menu {
+    display: block;
+}
+
+#menu-item-19228 .sub-menu {
+    display: block;
+}
+
+/* MEDIA BUTTON */
+.media-button {
+    display: inline-grid;
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 20px;
+    /* Place the button at the bottom of the page */
+    right: 30px;
+    /* Place the button 30px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+}
+
+.media-button .icon {
+    margin: 0 20px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.media-button .instagram {
+    margin-bottom: 20px;
+}
+
+.media-button .icon span {
+    display: block;
+    height: 60px;
+    width: 60px;
+    background: #cd8d9f;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.media-button .icon span i {
+    line-height: 60px;
+    font-size: 25px;
+}
+
+.media-button .icon .tooltip {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background: #fff;
+    color: #fff;
+    padding: 10px 18px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 25px;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.media-button .icon:hover .tooltip {
+    top: -70px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.fab {
+    color: #fff;
+}
+
+.icon .tooltip:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background: #fff;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%) rotate(45deg);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.media-button .icon:hover span {
+    color: #fff;
+}
+
+.media-button .icon:hover span,
+.media-button .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
+}
+
+.media-button .instagram:hover span,
+.media-button .instagram:hover .tooltip,
+.media-button .instagram:hover .tooltip:before {
+    background: #67b1b6;
+}
+
+.media-button .language:hover span,
+.media-button .language:hover .tooltip,
+.media-button .language:hover .tooltip:before {
+    background: #67b1b6;
+}
+
+.fa-language {
+    font-weight: bold !important;
+    font-size: 26px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 17px 25px 17px 1px;
+}
+
+/* WEB SINGLE NEWS */
+.wrapper-edit {
+    width: 70%;
+}
+.breadcrumbs {
+    width: 94%;
+    font-size: 14px;
+    font-weight: bold;
+    color: #676767;
+}
+
+.crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.crumbs li:hover a {
+    color: #67b1b6;
+    border-bottom: 4px solid #67b1b6;
+}
+
+.crumbs li:not(:last-child)::after {
+    content: '>';
+    margin: 0 20px;
+}
+.crumbs li {
+    position: relative;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+.crumbs li a{
+    margin: 0px;
+    padding: 0;
+}
+.article-tag {
+    display: flex;
+}
+.article-tag a{
+    color: #67b1b6;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: transparent;
+    border: 2px solid #cd8d9f;
+    border-radius: 24px;
+    text-decoration: none;
+    padding: 0px 5px;
+    margin: 0px;
+    margin-right: 5px;
+    display: flex;
+    line-height: 20px;
+
+}
+.jv-main-content {
+    font-size: 16px;
+    line-height: 35px;
+}
+.news-head h1 {
+    color: #fff;
+    font-weight: bold;
+    text-shadow:
+    -3px -3px 0 #cd8d9f, 0 -3px 0 #cd8d9f, 3px -3px 0 #cd8d9f, 3px 0 0 #cd8d9f, 3px 3px 0 #cd8d9f, 0 3px 0 #cd8d9f, -3px 3px 0 #cd8d9f, -3px 0 0 #cd8d9f;
+    margin: 0px 0px 20px 0px;
+    font-size: 34px;
+}
+.news-head {
+    border-bottom: solid 4px #cd8d9f;
+}
+.date small {
+    font-size: 14px;
+    font-weight: bold;
+    color: #676767;
+}
+
+/* ARTICLE BODY */
+.article-news-body {
+    margin-top: 0px;
+}
+.w760{
+    margin-top: 10px;
+}
+.w760 p {
+    line-height: 35px;
+    margin-bottom: 15px;
+}
+.wp-block-image {
+    text-align: center;
+}
+.wp-block-image img {
+    height: auto;
+    max-width: 60%;
+    vertical-align: bottom;
+    margin: 0 auto;
+}
+.wp-element-caption {
+    text-align: center;
+}
+.toc_title{
+    font-weight: bold;
+    color: #676767;
+    margin: 0px !important;
+}
+.toc_list {
+    background-color: #f0dbe1;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.toc_list a{
+    padding: 0px;
+    margin: 0;
+}
+
+.w760 h2 {
+    color: #cd8d9f;
+    font-weight: bold;
+    margin: 20px 0px 20px 0px;
+    font-size: 35px;
+}
+hr.vertical {
+    border: 0;
+    margin: 0;
+    border-left: 5px solid #cd8d9f;
+    height: 38px;
+    float: left;
+  }
+strong {
+    margin-left: 5px;
+}
+
+.share-article {
+    margin: 100px 0;
+}   
+.share-article ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.share-article ul li {
+    width: 22%;
+}
+.share-article ul li.fb_like {
+    background: #1877f2;
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+}
+.share-article ul li.fb {
+    background: #3B5998;
+    border-radius: 4px;
+    font-size: 13px;
+    height: 40px;
+    padding: 0 8px;
+}
+.share-article ul li.tw {
+    background: #1DA1F2;
+    border-radius: 4px;
+    font-size: 13px;
+    height: 40px;
+    padding: 0 8px;
+}
+.share-article ul li.ln {
+    background: #00B900;
+    border-radius: 4px;
+    font-size: 13px;
+    height: 40px;
+    padding: 0 8px;
+}
+.share-article ul li img {
+    text-align: center;
+    margin: 0 auto;
+    width: auto;
+    height: 20px;
+}
+.share-article ul li a {
+    display: block;
+    text-align: center;
+    padding: 8px 0px;
+    margin: 0;
+}
+    
+/* NEWS PAGE */
+.jv-list-txt a {
+    text-decoration: none;
+    color: #676767;
+    font-weight: bold;
+}
+.page-news {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 0px;
+    border-bottom: 1px solid #999999;
+    position: relative;
+    margin: 0 0 35px;
+    display: flex;
+    flex-direction: column;
+}
+.jv-list-tags li{
+    color: #67b1b6;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: white;
+    border: 2px solid #cd8d9f;
+    border-radius: 24px;
+    text-decoration: none;
+    padding: 0px 5px;
+    margin: 0px;
+    margin-right: 5px;
+    display: flex;
+    line-height: 20px;
+}
+.page-news .jv-list-img a{
+    display: block;
+    width: 260px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    animation-duration: 0.3s;
+    transition-duration: 0.3s;
+    border-radius: 6px;
+}
+.jv-list-body {
+    margin-left: 10px;
+}
+/* IMG */
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
