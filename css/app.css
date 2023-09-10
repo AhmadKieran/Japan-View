@@ -489,7 +489,7 @@ li:focus-within>button>.arrow {
 .video-1 {
     width: 100%;
     height: 213px;
-    background-image: url('https://japanview.tv/wp-content/uploads/2022/09/thumb_shibuya.jpg');
+    background-image: url(../IMG/Internship\ 1.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -501,7 +501,7 @@ li:focus-within>button>.arrow {
     position: absolute;
     margin: 0 auto;
     z-index: 1;
-    background: url(../img/icon-play.png);
+    background: url();
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
@@ -513,7 +513,7 @@ li:focus-within>button>.arrow {
 .video-2 {
     width: 100%;
     height: 138px;
-    background-image: url('https://japanview.tv/wp-content/uploads/2022/04/thumb_asakusa-1.jpg');
+    background-image: url(../IMG/Internship\ 2.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -525,7 +525,7 @@ li:focus-within>button>.arrow {
     position: absolute;
     margin: 0 auto;
     z-index: 1;
-    background: url(../img/icon-play.png);
+    background: url();
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -537,7 +537,7 @@ li:focus-within>button>.arrow {
 .video-3 {
     width: 100%;
     height: 138px;
-    background-image: url('https://japanview.tv/wp-content/uploads/2022/05/thumb_takeshita_doori.jpg');
+    background-image: url(../IMG/Internship\ 3.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -549,7 +549,7 @@ li:focus-within>button>.arrow {
     position: absolute;
     margin: 0 auto;
     z-index: 1;
-    background: url(../img/icon-play.png);
+    background: url();
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
