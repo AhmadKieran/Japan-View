@@ -326,8 +326,9 @@ li:focus-within>button>.arrow {
 }
 
 /* Swiper */
-.super-slide {
-    
+
+.swiper-slide {
+    background-color: #E3CA8F;
 }
 
 .swiper-slide img {
